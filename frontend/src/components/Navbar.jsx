@@ -21,7 +21,7 @@ function Navbar(){
    {role === "ngo" && (
     <>
      <Link to="/ngo/dashboard">Dashboard</Link>
-     <Link to="/ngo/recharge">Recharge Work</Link>
+     <Link to="/ngo/works">Recharge Work</Link>
     </>
    )}
 

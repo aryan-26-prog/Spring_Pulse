@@ -1,5 +1,6 @@
 import React from "react"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 
 export default function NgoDashboard() {
@@ -7,6 +8,7 @@ export default function NgoDashboard() {
   const [stats,setStats] = useState({})
   const [springs,setSprings] = useState([])
 
+  const navigate = useNavigate()
   const token = localStorage.getItem("token")
 
   useEffect(() => {
@@ -102,7 +104,7 @@ export default function NgoDashboard() {
             </button>
 
             <button
-            onClick={()=>window.location.href=`/recharge/${spring._id}`}
+            onClick={()=>navigate(`/ngo/recharge/${spring._id}`)}
             >
               Add Recharge Work
             </button>

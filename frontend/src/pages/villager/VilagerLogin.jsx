@@ -14,12 +14,22 @@ function Login(){
 
   e.preventDefault()
 
-  const res = await API.post(`/${role}/login`,{email,password})
+  try{
 
-  localStorage.setItem("token",res.data.token)
-  localStorage.setItem("role",role)
+   const res = await API.post(`/${role}/login`,{
+    email,
+    password
+   })
 
-  navigate(`/${role}/dashboard`)
+   localStorage.setItem("token",res.data.token)
+   localStorage.setItem("role",role)
+
+   navigate(`/${role}/dashboard`)
+
+  }catch(err){
+   console.log(err)
+   alert("Login failed")
+  }
 
  }
 
