@@ -1,8 +1,8 @@
 import { useEffect,useState } from "react"
-import API from "../api/api"
+import API from "../../api/api";
 
-import SpringCard from "../components/SpringCard"
-import SpringMap from "../components/SpringMap"
+import SpringCard from "../../components/SpringCard"
+import SpringMap from "../../components/SpringMap"
 
 function Dashboard(){
 

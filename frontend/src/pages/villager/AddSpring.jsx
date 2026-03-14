@@ -1,5 +1,5 @@
 import { useState } from "react"
-import API from "../api/api"
+import API from "../../api/api";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 

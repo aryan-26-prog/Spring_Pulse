@@ -1,11 +1,11 @@
-import React from "react"
-import {useState} from "react"
-import API from "../api/api"
-import {useNavigate} from "react-router-dom"
+import React, { useState } from "react"
+import API from "../../api/api"
+import { useNavigate, useParams } from "react-router-dom"
 
 function Login(){
 
  const navigate = useNavigate()
+ const { role } = useParams()
 
  const [email,setEmail] = useState("")
  const [password,setPassword] = useState("")
@@ -14,11 +14,12 @@ function Login(){
 
   e.preventDefault()
 
-  const res = await API.post("/auth/login",{email,password})
+  const res = await API.post(`/${role}/login`,{email,password})
 
   localStorage.setItem("token",res.data.token)
+  localStorage.setItem("role",role)
 
-  navigate("/dashboard")
+  navigate(`/${role}/dashboard`)
 
  }
 
@@ -26,7 +27,7 @@ function Login(){
 
   <div>
 
-   <h2>Login</h2>
+   <h2>{role} Login</h2>
 
    <form onSubmit={submit}>
 

@@ -6,6 +6,7 @@ const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/villager/authRoutes");
 const springRoutes = require("./routes/villager/springRoutes");
+const ngoRoutes = require("./routes/ngo/ngoRoutes");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/springs", springRoutes);
+app.use("/api/ngo", ngoRoutes);
 
 app.get("/", (req, res) => {
   res.send("Spring Pulse Backend running");
